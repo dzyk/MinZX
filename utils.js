@@ -19,11 +19,11 @@ function loadRemoteBinaryFile(url, callback)
     let req = new XMLHttpRequest();
     req.responseType = 'arraybuffer';
     req.addEventListener('load', function() {
-        if (this.status != 200) {
+        /*if (this.status != 200) {
             console.error('loadRemoteBinaryFile: error ' + this.status + ' while trying to read url ' + url);
             callback(null);
             return;
-        }
+        }*/
         let arrayBuffer = this.response;
         let byteArray = new Uint8Array(arrayBuffer);
         callback(byteArray);
